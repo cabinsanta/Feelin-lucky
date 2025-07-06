@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Randomizer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="generateRandom()">Randomize</button>
+  <div id="result"></div>
+
+  <script>
+    function generateRandom() {
+      const number = Math.floor(Math.random() * 5001); // 0 to 5000
+      const abbreviations = ['btc', 'etc', 'link'];
+      const abbrev = abbreviations[Math.floor(Math.random() * abbreviations.length)];
+      document.getElementById('result').textContent = `${number} ${abbrev}`;
+    }
+  </script>
+
+</body>
+</html>
